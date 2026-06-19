@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Shop - Checkout</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="checkout">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Simple Shop</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+        </ul>
+        <a href="cart.html" class="btn btn-outline-primary position-relative me-2">
+          Cart
+          <span
+            id="cart-count"
+            class="badge bg-primary text-white rounded-pill position-absolute top-0 start-100 translate-middle"
+          >
+            0
+          </span>
+        </a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Feedback alert -->
+  <div class="container mt-3">
+    <div id="feedback" class="alert d-none" role="alert"></div>
+  </div>
+
+  <main class="py-4">
+    <div class="container">
+      <h1 class="h4 mb-3">Checkout</h1>
+      <p class="text-muted small mb-4" id="checkout-info">
+        Please provide your details to complete this demo order. This form is for usability testing only.
+      </p>
+
+      <div id="checkout-empty-cart" class="alert alert-info d-none" role="alert">
+        Your cart is empty, so you cannot proceed to checkout.
+        Please add at least one item from the
+        <a href="products.html" class="alert-link">products page</a>.
+      </div>
+
+      <form id="checkout-form" class="needs-validation" novalidate>
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              required
+            />
+            <div class="invalid-feedback">Please enter your full name.</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phone"
+              name="phone"
+              placeholder="e.g. 9876543210"
+              required
+            />
+            <div class="invalid-feedback">Please enter a phone number.</div>
+          </div>
+
+          <div class="col-12">
+            <label for="address" class="form-label">Address</label>
+            <textarea
+              class="form-control"
+              id="address"
+              name="address"
+              rows="3"
+              placeholder="Street, city, state, postal code"
+              required
+            ></textarea>
+            <div class="invalid-feedback">Please enter your address.</div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mt-4">
+          <a href="cart.html" class="btn btn-outline-secondary">Back to Cart</a>
+          <button type="submit" class="btn btn-primary">Place Order</button>
+        </div>
+      </form>
+
+      <div id="checkout-success" class="alert alert-success mt-4 d-none" role="alert">
+        Thank you! Your demo order has been submitted successfully.
+        You can now safely close this page or return to the
+        <a href="index.html" class="alert-link">home page</a>.
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-top py-4 mt-auto">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <p class="mb-2 mb-md-0 small text-muted">&copy; <span id="year"></span> Simple Shop</p>
+      <p class="mb-0 small text-muted">
+        Contact: <a href="mailto:contact@simpleshop.test" class="text-muted">contact@simpleshop.test</a>
+      </p>
+    </div>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="script.js"></script>
+</body>
+</html>
+

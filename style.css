@@ -1,0 +1,65 @@
+/* Basic layout */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+/* Hero placeholder */
+.hero-placeholder {
+  min-height: 220px;
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+}
+
+/* Consistent button style (tweaks on top of Bootstrap) */
+.btn-primary {
+  border-radius: 999px;
+}
+
+.btn-outline-secondary,
+.btn-outline-primary {
+  border-radius: 999px;
+}
+
+/* Product cards */
+.product-card img {
+  object-fit: cover;
+  height: 180px;
+}
+
+@media (max-width: 576px) {
+  .product-card img {
+    height: 160px;
+  }
+}
+
+/* Feedback alert transition */
+#feedback {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Small utility tweaks */
+.form-control,
+.form-select,
+textarea {
+  border-radius: 0.6rem;
+}
+
+table td,
+table th {
+  vertical-align: middle;
+}
+
